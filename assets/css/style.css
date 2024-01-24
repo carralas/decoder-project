@@ -1,14 +1,17 @@
 @import "./reset.css";
 
 :root {
-    --main-background-color: #f3f5fc;
+    --main-background-color: #d8dfe8;
     --main-color-1: #0a3871;
     --main-color-2: #b3b3b3;
     --secondary-color-1: #495057;
-    --secondary-color-2: #d8dfe8;
+    --secondary-color-2: #f3f5fc;
 }
 
 body {
+    display: flex;
+    flex-direction: row;
+
     background-color: var(--main-background-color);
 }
 
@@ -33,6 +36,8 @@ body {
     height: 62.5%;
 
     padding: .75rem;
+
+    background-color: transparent;
 
     color: var(--main-color-1);
     font-size: 2rem;
@@ -66,30 +71,37 @@ body {
 
 .input .input__buttons button {
     width: 10rem;
-}
 
-.input .input__buttons .codify {
     padding: 1.5rem;
 
     border: 1px solid var(--main-color-1);
     border-radius: 1.5rem;
 
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.input .input__buttons button.encode {
     background-color: var(--main-color-1);
 
     color: var(--secondary-color-2);
-    font-size: 1rem;
-    font-weight: 400;
 }
 
-.input .input__buttons .decodify {
-    padding: 1.5rem;
-
-    border: 1px solid var(--main-color-1);
-    border-radius: 1.5rem;
-
+.input .input__buttons button.decode {
     background-color: var(--secondary-color-2);
 
     color: var(--main-color-1);
-    font-size: 1rem;
-    font-weight: 400;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 25vw;
+    height: 100vh;
+
+    background-color: var(--secondary-color-2);
+
+    padding: 1rem;
 }
