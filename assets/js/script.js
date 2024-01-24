@@ -1,8 +1,15 @@
 view = {
     inputText: document.querySelector('.input__box'),
-    outputText: document.querySelector('.output__box'),
+    outputText: document.querySelector('.output__filled__box'),
     encodeButton: document.querySelector('.encode'),
-    decodeButton: document.querySelector('.decode')
+    decodeButton: document.querySelector('.decode'),
+    copyButton: document.querySelector('.copy'),
+    outputBoxEmpty: document.querySelector('.output__empty'),
+    outputBoxFilled: document.querySelector('.output__filled')
+}
+
+value = {
+    inputFirstClick: false
 }
 
 code = {
@@ -25,12 +32,24 @@ function translator(input, model) {
     /* evita que a etapa de encriptação passe em uma posição com caracter recém criado */
     /* facilita a etapa de desencriptação */
     Object.keys(model).forEach(key => output = output.replaceAll(key, model[key]))
-    alert(output.toLowerCase())
+    view.outputBoxEmpty.style.display = 'none'
+    view.outputBoxFilled.style.display = 'flex'
+    view.outputText.innerHTML = output.toLowerCase()
+}
+
+function inputCleaner() {
+    console.log('clicou')
+    if (value.inputFirstClick == false) {
+        console.log('limpou')
+        view.inputText.innerHTML = ''
+        value.inputFirstClick = true
+    }
 }
 
 function main() {
     view.encodeButton.addEventListener('click', () => translator(view.inputText.value, code.encrypt))
     view.decodeButton.addEventListener('click', () => translator(view.inputText.value, code.decrypt))
+    view.inputText.addEventListener('click', () => inputCleaner())
 }
 
 main();
