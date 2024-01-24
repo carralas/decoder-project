@@ -20,6 +20,10 @@ code = {
 
 function translator(input, model) {
     let output = input
+    /* o looping é feito por chave */
+    /* isso faz com que só ocorra cinco vezes */
+    /* evita que a etapa de encriptação passe em uma posição com caracter recém criado */
+    /* facilita a etapa de desencriptação */
     Object.keys(model).forEach(key => output = output.replaceAll(key, model[key]))
     alert(output.toLowerCase())
 }
