@@ -9,16 +9,20 @@
 }
 
 body {
+    background-color: var(--main-background-color);
+}
+
+main{
     display: flex;
     flex-direction: row;
 
-    background-color: var(--main-background-color);
+    padding: 1.5rem;
 }
 
 .input {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
 
     width: 75vw;
     height: 100vh;
@@ -101,7 +105,69 @@ body {
     width: 25vw;
     height: 100vh;
 
+    padding: 1rem;
+    border-radius: 1.5rem;
+
     background-color: var(--secondary-color-2);
+}
+
+.output div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    height: 100%;
+}
+
+.output .output__empty {
+    justify-content: center;
+}
+
+.output .output__empty img {
+    width: 75%;
+}
+
+.output .output__empty span {
+    color: var(--main-color-1);
+    text-align: center;
+}
+
+.output .output__empty .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.output .output__empty .subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.output .output__filled {
+    display: none;
+
+    justify-content: space-between;
+}
+
+.output .output__filled .output__filled__box {
+    height: 62.5%;
 
     padding: 1rem;
+    
+    color: var(--secondary-color-1);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.output .output__filled button.copy {
+    width: 7.5rem;
+
+    padding: 1.5rem;
+    border: 1px solid var(--main-color-1);
+    border-radius: 1.5rem;
+
+    background-color: transparent;
+
+    font-size: 1rem;
+    font-weight: 400;
 }
