@@ -46,10 +46,15 @@ function inputCleaner() {
     }
 }
 
+function copyTranslation() {
+    navigator.clipboard.writeText(view.outputText.innerHTML)
+}
+
 function main() {
     view.encodeButton.addEventListener('click', () => translator(view.inputText.value, code.encrypt))
     view.decodeButton.addEventListener('click', () => translator(view.inputText.value, code.decrypt))
     view.inputText.addEventListener('click', () => inputCleaner())
+    view.copyButton.addEventListener('click', () => copyTranslation())
 }
 
 main();
