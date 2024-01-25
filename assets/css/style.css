@@ -46,6 +46,8 @@ main{
     color: var(--main-color-1);
     font-size: 2rem;
     font-weight: 400;
+
+    outline: none;
 }
 
 .input .input__rules {
@@ -151,7 +153,9 @@ main{
     justify-content: space-between;
 }
 
-.output .output__filled .output__filled__box {
+.output .output__filled .output__filled-box {
+    max-width: 25vw;
+    
     height: 62.5%;
 
     padding: 1rem;
@@ -159,6 +163,8 @@ main{
     color: var(--secondary-color-1);
     font-size: 1rem;
     font-weight: 400;
+    text-align: center;
+    word-wrap: break-word;
 }
 
 .output .output__filled button.copy {

@@ -1,6 +1,6 @@
 view = {
     inputText: document.querySelector('.input__box'),
-    outputText: document.querySelector('.output__filled__box'),
+    outputText: document.querySelector('.output__filled-box'),
     encodeButton: document.querySelector('.encode'),
     decodeButton: document.querySelector('.decode'),
     copyButton: document.querySelector('.copy'),
